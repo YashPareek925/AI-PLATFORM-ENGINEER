@@ -4,7 +4,7 @@ def simulate_runtime(schema: dict):
         "issues": []
     }
 
-    endpoints = schema["api_schema"].get("endpoints", [])
+    endpoints = schema.get("api_schema", {}).get("endpoints", [])
 
     if len(endpoints) == 0:
         result["valid"] = False

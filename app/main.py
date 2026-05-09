@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.intent_extractor import extract_intent
+from intent_extractor import extract_intent
 from app.system_designer import generate_system_design
 from app.schema_generator import generate_schema
 from app.validator import validate_schema

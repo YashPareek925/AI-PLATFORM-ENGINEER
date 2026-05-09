@@ -47,11 +47,14 @@ User Prompt
 ```bash
 
 pip install -r requirements.txt
+```
+````
 
 Run server
 
 uvicorn app.main:app --reload
-________________________________________
+
+
 API Endpoint
 POST:
 

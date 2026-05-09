@@ -13,12 +13,12 @@ results = []
 for prompt in prompts:
     start_time = time.time()
 
-    response = requests.post(
-        "http://127.0.0.1:8000/generate",
-        json={
-            "prompt": prompt
-        }
-    )
+    try:
+        response = requests.post("http://127.0.0.1:8000/generate",
+                json={"prompt": prompt}, timeout=10)
+    
+    except requests.exceptions.ConnectionError:
+        print("Server nahi chal raha — pehle uvicorn start karo")
 
     end_time = time.time()
 

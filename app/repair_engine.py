@@ -3,9 +3,10 @@ def repair_schema(schema: dict, errors: list):
 
     for error in errors:
         if "ui_schema" in error:
-            repaired_schema["ui_schema"] = {
+            repaired_schema.setdefault("ui_schema", {
                 "pages": []
             }
+            )
 
         if "api_schema" in error:
             repaired_schema["api_schema"] = {
